@@ -38,21 +38,24 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
-
+ p array1.empty? 
+ p array2.empty?
 end
 
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-
+ numbers1.each do |number|
+ p number * 10
+ end
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-
+ p array.map!{|x|x.to_i}
 end
 
 def q8
