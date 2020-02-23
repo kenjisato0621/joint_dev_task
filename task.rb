@@ -46,16 +46,15 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
- numbers1.each do |number|
- p number * 10
- end
+ numbers2 = numbers1.map{|i|i*10}
+ p numbers2
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
- p array.map!{|x|x.to_i}
+ p array.map!(&:to_i)
 end
 
 def q8
