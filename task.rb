@@ -145,15 +145,29 @@ def q16
   users.each do |users|
     puts "私の名前は#{users[:name]}です。年齢は#{users[:age]}歳です。"
   end
-
 end
 
 class UserQ17
   # 以下に回答を記載
-
-end
-
+  def initialize(name:, age: ,gender: ,admin:)
+       @name = name 
+       @age = age 
+       @gender = gender
+       @admin = admin
+  end
+      
+  def info
+     admin = @admin? "有り":"無し"
+    puts <<~text
+    名前:#{@name} 
+    年齢:#{@age}
+    性別:#{@gender}
+    管理者権限:#{admin}
+    text
+  end
+end      
 def q17
+
   # ここは変更しないで下さい（ユーザー情報は変更していただいてOKです）
   user1 = UserQ17.new(name: "神里", age: 32, gender: "男", admin: true)
   user2 = UserQ17.new(name: "あじー", age: 32, gender: "男", admin: false)
