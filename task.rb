@@ -157,7 +157,7 @@ class UserQ17
   end
       
   def info
-     admin = @admin? "有り":"無し"
+     admin = @admin ? "有り":"無し"
     puts <<~text
     名前:#{@name} 
     年齢:#{@age}
@@ -179,7 +179,18 @@ end
 
 class UserQ18
   # 以下に回答を記載
+     def  initialize(name:,age:)
+        @name = name
+        @age = age     
+     end
 
+     def introduce
+      if @age >= 10
+      puts "こんにちは、#{@name}と申します。宜しくお願いいたします。"
+      else
+      puts "はいさいまいど～、#{@name}です！！！"
+      end
+     end
 end
 
 def q18
@@ -189,13 +200,15 @@ def q18
 
   puts user1.introduce
   puts user2.introduce
-end
+end 
 
 class Item
   # 以下を修正して下さい
-
-  def initialize(name)
+  def initialize(name:)
     @name = name
+  end
+  def name
+    puts @name
   end
 end
 
