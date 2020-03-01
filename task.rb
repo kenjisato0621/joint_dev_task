@@ -38,7 +38,7 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
- p array1.empty? 
+ p array1.empty?
  p array2.empty?
 end
 
@@ -86,7 +86,7 @@ def q10
        puts "好物です"
      else
        puts "まぁまぁ好きです"
-     end 
+     end
    end
 end
 
@@ -150,22 +150,22 @@ end
 class UserQ17
   # 以下に回答を記載
   def initialize(name:, age: ,gender: ,admin:)
-       @name = name 
-       @age = age 
+       @name = name
+       @age = age
        @gender = gender
        @admin = admin
   end
-      
+
   def info
      admin = @admin ? "有り":"無し"
     puts <<~text
-    名前:#{@name} 
+    名前:#{@name}
     年齢:#{@age}
     性別:#{@gender}
     管理者権限:#{admin}
     text
   end
-end      
+end
 def q17
 
   # ここは変更しないで下さい（ユーザー情報は変更していただいてOKです）
@@ -181,7 +181,7 @@ class UserQ18
   # 以下に回答を記載
      def  initialize(name:,age:)
         @name = name
-        @age = age     
+        @age = age
      end
 
      def introduce
@@ -200,11 +200,11 @@ def q18
 
   puts user1.introduce
   puts user2.introduce
-end 
+end
 
 class Item
   # 以下を修正して下さい
-  attr_reader :name  
+  attr_reader :name
   def initialize(name:)
     @name = name
   end
@@ -216,16 +216,39 @@ def q19
   puts book.name
 end
 
+
 class UserQ20
   # 以下に回答を記載
+  attr_reader :name, :age
 
+  def initialize(name:, age:)
+    @name = name
+    @age = age
+  end
 end
 
 class Zoo
   # 以下に回答を記載
+  def initialize(name:, entry_fee:)
+    @name = name
+    @entry_fee = entry_fee
+  end
 
+  def info_entry_fee(user)   
+    price = case user.age
+    when 0..5
+      @entry_fee[:infant]
+    when 6..12
+      @entry_fee[:children]
+    when 13..64
+      @entry_fee[:adult]
+    when 65..120
+      @entry_fee[:senior]
+   end
+    
+    puts "#{user.name}さんの入場料金は #{price} 円です。"
+ end
 end
-
 
 def q20
   # ここは変更しないで下さい（動物園・ユーザー情報は変更していただいてOKです）
@@ -236,7 +259,7 @@ def q20
     UserQ20.new(name: "ゆたぼん", age: 10),
     UserQ20.new(name: "あじー", age: 32),
     UserQ20.new(name: "ぎん", age: 108)
-  ]
+    ]
 
   users.each do |user|
     zoo.info_entry_fee(user)
